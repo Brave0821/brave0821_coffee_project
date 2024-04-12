@@ -23,14 +23,14 @@ a {
 
 /* HEADER */
 header {
-    background: violet;
+    background-color: #f6f5f0;
+    border-bottom: 1px solid #c8c8c8;
 }
 
 header .inner {
     width: 1100px;
     height: 120px;
     margin: 0 auto;
-    background:turquoise;
     /* 강의 내용 */
     position: relative;
 }
@@ -39,7 +39,6 @@ header .logo {
     height: 75px;
     position: absolute;
     top: 0; bottom: 0; left: 0; margin: auto;
-    display: none;
     /* 내가한 것 반응형 만들려면 앱솔쓰면 x */
    /*  display: flex;
     justify-content: space-between; */
@@ -47,7 +46,9 @@ header .logo {
 }
 
 header .sub-menu {
-
+    position: absolute;
+    top: 10px; right: 0px;
+    display: flex;
 }
 
 header .sub-menu ul.menu {
@@ -87,9 +88,38 @@ header .sub-menu ul.menu li a:hover {
 
 
 header .sub-menu .search {
-    
+    height: 34px;
+    position: relative;
+}
+
+header .sub-menu .search input {
+    width: 36px;
+    height: 34px;
+    padding: 4px 10px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 5px;
+    outline: none;
+    background-color: #fff;
+    color: #777;
+    font-size: 12px;
+    /* 가로만 전환효과  */
+    transition: width .4s;
+}
+
+header .sub-menu .search input:focus {
+    width: 190px;
+    border-color: #669900;
 }
 
 header .sub-menu .search .material-icons {
+    height: 24px;
+    position: absolute;
+    top: 0; bottom: 0; right: 5px; margin: auto;
+    transition: .4s;
+}
 
+/* 클릭 후 아이콘 사라짐. */
+header .sub-menu .search.focused .material-icons {
+    opacity: 0;
 }
