@@ -193,6 +193,11 @@ header .main-menu .item .item__contents .contents__menu > ul > li ul li {
     color: #999;
     cursor: pointer;
 }
+/* 마우스 올리면 #669900 */
+header .main-menu .item .item__contents .contents__menu > ul > li ul li:hover {
+    color: #669900;
+}
+
 /*<h4>나와 어울리는 커피 찾기</h4>*/
 header .main-menu .item .item__contents .contents__texture {
     font-size: 12px;
