@@ -233,3 +233,40 @@ header .badges .badge {
     box-shadow: 4px 4px 10px rgba(0,0,0,.15);
     cursor: pointer;
 }
+
+/* HEADER 끝 VISUAL 시작 */
+
+.visual {
+    margin-top: 120px;
+}
+
+.visual .inner {
+
+}
+
+.visual .title {
+
+}
+.visual .title .btn {
+
+}
+
+/* 클래스 선택자가 2개 붙어있으면 일치 선택자 */
+
+.visual .cup1.image {
+
+}
+.visual .cup1.text {
+
+}
+
+.visual .cup2.image {
+
+}
+.visual .cup2.text {
+
+}
+
+.visual .spoon {
+
+}
