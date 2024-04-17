@@ -8,12 +8,13 @@
 </div>
 
 * 적용 후 
-<div class="container">
+
+<!-- <div class="container">
     <div class="container__name"></div>
     <div class="item">
         <div class="item__name"></div>
     </div>
-</div>
+</div> -->
 
 * 어느 부분의 일부분이다 알 수 있음.
 
