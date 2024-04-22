@@ -23,9 +23,79 @@ a {
 .inner {
     width: 1100px;
     margin: 0 auto;
+    /* 밑에 각 종 이미지들  position: absolute; */
     position: relative;
 }
+/* 버튼 공통 사항 */
+.btn {
+    width: 130px;
+    padding: 10px;
+    border: 2px solid #333;
+    border-radius: 4px;
+    color: #333;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    cursor: pointer;
+    box-sizing: border-box;
+    /* a태크가 span 태그에 btn 부여해도 모양 나올 수 있게 블록 요소 */
+    display: block;
+    /* 바뀜이 자연스럽게 일어나도록. 전환효과 부여 */
+    transition: .4s;
+}
+
+.btn:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+/* 일치선택자와 BEM 상태 -- 앞의 요소의 상태를 -- 하이픈 기호로 명시 */
+/* reverse - > 반전 */
+.btn.btn--reverse {
+    background-color: #333;
+    color: #fff;
+}
+.btn.btn--reverse:hover {
+    /* 투명함을 나타내는 색상 : transparent */
+    background-color: transparent;
+    color: #333;
+}
+
+/* btn BROWN */
+.btn.btn--brown {
+    color: #592B18;
+    border-color: #592B18;
+}
+.btn.btn--brown:hover {
+    color: #fff;
+    background-color: #592B18;
+}
+
+/* btn GOLD */
+.btn.btn--gold {
+    color: #d9aa8a;
+    border-color: #d9aa8a;
+}
+.btn.btn--gold:hover {
+    color: #fff;
+    background-color: #d9aa8a;
+}
+
+/* btn WHITE */
+.btn.btn--white {
+    color: #fff;
+    border-color: #fff;
+}
+.btn.btn--white:hover {
+    color: #333;
+    background-color: #fff;
+}
+
+
 /* COMMON : 공통 끝 */
+
+
+
 
 /* HEADER */
 header {
@@ -35,6 +105,7 @@ header {
     position: fixed;
     /* 브라우저 뷰포트 기준으로 하겠다. fixed */
     top: 0;
+    z-index: 9;
 }
 
 header > .inner {
@@ -238,35 +309,58 @@ header .badges .badge {
 
 .visual {
     margin-top: 120px;
+    background-image: url("../images/visual_bg.jpg");
+    background-position: center;
 }
 
 .visual .inner {
-
+    height: 646px;
 }
 
 .visual .title {
-
+    position: absolute;
+    top: 88px; 
+    left: -10px;
 }
 .visual .title .btn {
+    position: absolute;
+    top: 259px;
+    left: 173px;
 
 }
 
 /* 클래스 선택자가 2개 붙어있으면 일치 선택자 */
-
+/* 공통 COM .inner에 position: relative;  */
 .visual .cup1.image {
-
+    position: absolute;
+    bottom: 0;
+    right: -47px;
 }
 .visual .cup1.text {
-
+    /* 오트밀 라떼 */
+    position: absolute;
+    top: 38px;
+    right: 171px;
 }
 
 .visual .cup2.image {
-
+    position: absolute;
+    bottom: 0;
+    right: 162px;
 }
 .visual .cup2.text {
-
+    /* 스타벅스 카라멜 크럼블 모카 */
+    position: absolute;
+    top: 321px;
+    right: 416px;
 }
 
 .visual .spoon {
-
+    position: absolute;
+    bottom: 0;
+    left: 275px;
+}
+/* 안보이게 만들어두고 js로 순차적으로 나타나게 */
+.visual .fade-in {
+    opacity: 0;
 }

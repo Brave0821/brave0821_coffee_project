@@ -60,3 +60,22 @@ window.addEventListener("scroll", _.throttle(function (){
 /* 300 - > 0.3초 
 .throttle - > 일정시간 한 번씩 실행되도록 제한을 걸다.
 */
+
+
+/* FADE-IN: 순차적으로 나타나는 기능. */
+
+const fadeEls = document.querySelectorAll(".visual .fade-in");
+/* fadeEl -> 요소부분은 내가 원하는 이름으로, 반복횟수 인덱스 */
+fadeEls.forEach(function (fadeEl, index) {
+    /* 2개의 매개변수를 가지고 있는 함수들이 반복적으로 실행 될 때 */
+    gsap.to(fadeEl, 1, {
+        delay:(index + 1) * 0.7,
+        /*    delay:(index + 1) * 0.7, - > 
+        0에 숫자 1 더해서 0.7 곱하면 fade-in 이라는 클래스를 가진 요소는 0.7초 후에 애니메이션 동작
+        두 번쨰는 1.4초 세 번쨰 2.1  네 번쨰 2.7 뒤에 요소에 opacity 1로 나타내게 만듬.
+        */
+        opacity: 1
+    } );
+       // gsap.to(여기에선 반복요소, 지속시간 초 단위, 옵션);
+    /* gsap.to - > 애니메이션 라이브러리 */
+});
