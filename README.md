@@ -115,3 +115,30 @@ fadeEls.forEach(function (fadeEl, index) {
 });
 ```
 --------------------------------------------------------------------------------------------------
+
+## 기타 도움되는 
+
+* reset css
+```
+   <link href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css" rel="stylesheet">
+    <!-- https://www.jsdelivr.com/package/npm/reset-css 리셋 css 추가. -->
+```
+
+* 아이콘 
+
+```
+    <!-- https://fontawesome.com/search?q=Search&o=r 아이콘 -->
+    <!-- https://fonts.google.com/icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+```
+### 사용법 : ^ 에 아이콘 사이트에 들어가서 원하는 아이콘 네임 가져와서 밑에 입력
+```
+ ex) <div class="material-icons">add_circle</div>
+
+```
+
+---------------------------------------------------------------------------------------------------
+# swiperjs v11.1.1 버젼
+
+* https://swiperjs.com/
+
