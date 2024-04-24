@@ -137,9 +137,21 @@ fadeEls.forEach(function (fadeEl, index) {
 
 ```
 
+### a태그에 #보단 <a href="javascript:void(0)"></a> 사용권장
+
 ---------------------------------------------------------------------------------------------------
 # swiperjs v11.1.1 버젼
 
 * https://swiperjs.com/
 
+
+```
+
+ <!-- 스와이퍼 CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script defer src="./js/main.js"></script>
+
+```    
+MAIN.JS 위에 CDN
 

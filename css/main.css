@@ -401,6 +401,7 @@ header .badges .badge {
     width: 60%; height: 100%;
     background-color: #333;
     display: flex;
+    align-items: center;
 }
 
 .notice .notice-line .inner__left h2 {
@@ -410,11 +411,20 @@ header .badges .badge {
     margin-right: 20px;
 
 }
-
-.notice .notice-line .inner__left .swiper-container {
+/*    <!-- <div class="swiper-container"> 최신 버젼에선 swiper만 입력 --> */
+.notice .notice-line .inner__left .swiper {
     height: 62px;
-    background-color: teal;
     flex-grow: 1;
+}
+
+.notice .notice-line .inner__left .swiper-slide {
+    height: 62px;
+    display: flex;
+    align-items: center;
+}
+
+.notice .notice-line .inner__left .swiper-slide a {
+    color: #fff;
 }
 
 .notice .notice-line .inner__left .notice-line__more {

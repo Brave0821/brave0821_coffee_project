@@ -79,3 +79,16 @@ fadeEls.forEach(function (fadeEl, index) {
        // gsap.to(여기에선 반복요소, 지속시간 초 단위, 옵션);
     /* gsap.to - > 애니메이션 라이브러리 */
 });
+
+
+/*공지사항  스와이퍼 부분 */
+
+/* new -> 생성자  */
+// <!-- <div class="swiper-container"> 최신 버젼에선 swiper만 입력 -->
+/* new Swiper(선택자, 옵션) */
+new Swiper(".notice-line .swiper", {
+    direction: "vertical",
+    autoplay: true,
+    /* loop 4번째에 반복재생여부 */
+    loop: true
+});
