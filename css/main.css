@@ -468,6 +468,14 @@ header .badges .badge {
     height: 693px;
     background-color: #f6f5ef;
     position: relative;
+    /* 높이가 693에서 0px로 0.4초에 걸쳐서 자연스럽게 조정됨 */
+    transition: height 0.4s;
+    overflow: hidden;
+}
+
+/* 일치선택자 프로모션이라는 요소에 hide라는 클래스가 붙어 있는 경우를 의미함. */
+.notice .promotion.hide {
+    height: 0;
 }
 
 .notice .promotion .swiper {
@@ -496,4 +504,65 @@ header .badges .badge {
     position: absolute;
     bottom: 0; left: 0; right: 0;
     margin: auto;
+}
+
+.notice .promotion .swiper-pagination {
+    bottom: 40px;
+    left: 0; right: 0;
+}
+
+.notice .promotion .swiper-pagination .swiper-pagination-bullet {
+    background-color: transparent; /* 투명한색 */
+    background-image: url("../images/promotion_slide_pager.png");
+    width: 12px; height: 12px;
+    margin-right: 6px;
+    outline: none;
+}
+
+.notice .promotion .swiper-pagination .swiper-pagination-bullet:last-child {
+    margin-right: 0;
+}
+
+/* 활성화된 페이지 번호 */
+.notice .promotion .swiper-pagination .swiper-pagination-bullet-active {
+    background-image: url("../images/promotion_slide_pager_on.png");
+}
+
+
+/* 다중선택자. */
+.notice .promotion .swiper-button-prev,
+.notice .promotion .swiper-button-next {
+    width: 42px; height: 42px;
+    border: 2px solid #333;
+    border-radius: 50%;
+    position: absolute;
+    top: 300px; z-index: 1;
+    cursor: pointer;
+    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+}
+
+.notice .promotion .swiper-button-prev {
+    left: 50%;
+    margin-left: -480px;
+    color: #000;
+}
+.notice .promotion .swiper-button-prev::after{
+    display: none;
+}
+.notice .promotion .swiper-button-next {
+    right: 50%;
+    margin-right: -480px;
+    color: #000;
+}
+.notice .promotion .swiper-button-next::after{
+    display: none;
+}
+.notice .promotion .swiper-button-prev:hover,
+.notice .promotion .swiper-button-next:hover {
+    background-color: #333;
+    color: #fff;
 }

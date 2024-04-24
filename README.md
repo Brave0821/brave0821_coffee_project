@@ -165,3 +165,46 @@ fadeEls.forEach(function (fadeEl, index) {
 MAIN.JS 위에 CDN
 
 /* active -> 활성화 */
+
+
+.swiper-pagination-bullet에 효과주기
+
+```
+.notice .promotion .swiper-pagination .swiper-pagination-bullet {
+    background-color: transparent; /* 투명한색 */
+    background-image: url("../images/promotion_slide_pager.png");
+    width: 12px; height: 12px;
+    margin-right: 6px;
+    outline: none;
+}
+
+.notice .promotion .swiper-pagination .swiper-pagination-bullet:last-child {
+    margin-right: 0;
+}
+
+/* 활성화된 페이지 번호 */
+.notice .promotion .swiper-pagination .swiper-pagination-bullet-active {
+    background-image: url("../images/promotion_slide_pager_on.png");
+}
+
+/* 다중선택자. */
+.notice .promotion .swiper-button-prev,
+.notice .promotion .swiper-button-next {
+    width: 42px; height: 42px;
+    border: 2px solid #333;
+    border-radius: 50%;
+    position: absolute;
+    top: 300px; z-index: 1;
+    cursor: pointer;
+    outline: none;
+}
+
+```
+
+* 스와이퍼 next, prev 기본 양식 제거 
+
+```
+.notice .promotion .swiper-button-prev::after{
+    display: none;
+}
+```

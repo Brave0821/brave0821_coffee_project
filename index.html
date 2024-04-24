@@ -31,6 +31,8 @@
     <!-- https://fontawesome.com/search?q=Search&o=r 아이콘 -->
     <!-- https://fonts.google.com/icons -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <!-- 폰트어썸 cdn 스와이퍼 prev, next 적용-->
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./css/main.css">
     <!-- js lodash cdn -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js" integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -423,7 +425,7 @@
                     </a>
                 </div>
                 <div class="inner__right">
-                    <h1>스타벅스 프로모션</h1>
+                    <h2>스타벅스 프로모션</h2>
                     <div class="toggle-promotion">
                         <div class="material-icons">upload</div>
                     </div>
@@ -457,8 +459,13 @@
                 </div>
             </div>
             <div class="swiper-pagination"></div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev">
+                <div class="material-icons">arrow_back</div>
+                <!-- <i class="fa-solid fa-circle-chevron-left"></i> -->
+            </div>
+            <div class="swiper-button-next">
+                <div class="material-icons">arrow_forward</div>
+            </div>
         </div>
     </section>
     <!-- FOOTER -->

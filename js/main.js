@@ -115,3 +115,24 @@ new Swiper(".promotion .swiper", {
 });
 
 /* active -> 활성화 */
+
+/* 자세히 보기 클릭 시 하단 스와이프 숨김 기능 */
+
+const promotionEl = document.querySelector(".promotion");
+const promotionToggleBtn = document.querySelector(".toggle-promotion");
+let isHidePromotion = false;
+
+/* 프로모션 부분을 보여주고 숨겨주는 기능 */
+promotionToggleBtn.addEventListener("click", function(){
+    /* ! - > 느낌표가 붙어있는 뒷쪽에 있는 값이 반대가 되게
+    반대 값 전환 코드!
+    let isHidePromotion = false; 니까 true가 되게 클릭 시   */
+    isHidePromotion = !isHidePromotion
+    if(isHidePromotion) {
+        // 숨김처리
+        promotionEl.classList.add("hide");
+    } else { 
+        // 보임 처리
+        promotionEl.classList.remove("hide");
+    }
+});
