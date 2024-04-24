@@ -463,3 +463,37 @@ header .badges .badge {
 .notice .notice-line .inner__right .toggle-promotion .material-icons {
     font-size: 30px;
 }
+
+.notice .promotion {
+    height: 693px;
+    background-color: #f6f5ef;
+    position: relative;
+}
+
+.notice .promotion .swiper {
+    /* 총 넓이에 819 이미지 3장이 들어가고 사이사이 공간 10px 즉 2개니까 20px*/
+    width: calc(819px * 3 + 20px);
+    height: 553px;
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    /* 819px * 3 + 20px 전체 넓이에 절반만에서 나누기 2 / -2 */
+    margin-left: calc((819px * 3 + 20px) / -2);
+}
+
+.notice .promotion .swiper-slide {
+    opacity: 0.5;
+    /* 전환효과가 자연스럽게 */
+    transition: opacity 1s;
+    position: relative;
+}
+
+.notice .promotion .swiper-slide-active {
+    opacity: 1;
+}
+
+.notice .promotion .swiper-slide .btn {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    margin: auto;
+}

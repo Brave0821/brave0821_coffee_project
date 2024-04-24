@@ -139,6 +139,15 @@ fadeEls.forEach(function (fadeEl, index) {
 
 ### a태그에 #보단 <a href="javascript:void(0)"></a> 사용권장
 
+### CSS calc 사용해서 자동으로 넓이 계산.
+
+```
+.notice .promotion .swiper {
+    /* 총 넓이에 819 이미지 3장이 들어가고 사이사이 공간 10px 즉 2개니까 20px*/
+    width: calc(819px * 3 + 20px);
+}
+```
+
 ---------------------------------------------------------------------------------------------------
 # swiperjs v11.1.1 버젼
 
@@ -155,3 +164,4 @@ fadeEls.forEach(function (fadeEl, index) {
 ```    
 MAIN.JS 위에 CDN
 
+/* active -> 활성화 */
