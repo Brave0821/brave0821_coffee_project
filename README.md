@@ -208,3 +208,150 @@ MAIN.JS 위에 CDN
     display: none;
 }
 ```
+
+
+# YOUTUBE api 적용 
+
+```
+// 2. This code loads the IFrame Player API code asynchronously.
+/* const 변수 생성부분 
+createElement 요소 생성 메소드
+*/
+const tag = document.createElement('script');
+
+tag.src = "https://www.youtube.com/iframe_api";
+/* src에 외부 js 라이브러리가 할당됨. */
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+// 3. This function creates an <iframe> (and YouTube player)
+//    after the API code downloads.
+/* var player; */
+/* onYouTubeIframeAPIReady() 변경x api가 찾을 수 있게 */
+function onYouTubeIframeAPIReady() {
+    /* HTML에 <div id="player"></div> 아이디 값 찾아서 알아서 적용 */
+        new YT.Player('player', {
+     /*    height: '360',
+        width: '640', */
+        /* 어떤 ID값을 가지는 유튜브 영상을 출력할거냐. 
+         videoId: 'M7lc1UVf-VE',
+
+         /* https://www.youtube.com/watch?v=An6LvWQuj_8 
+         여기중에 An6LvWQuj_8 이 부분이 ID값이고 제어를 위해 필요하다.
+         */
+        // videoId: 'M7lc1UVf-VE',
+        videoId: 'An6LvWQuj_8', /* 최초 재생할 유튜브 영상 ID */
+        playerVars : {
+            autoplay : true , // 자동 재생 유무
+            loop: true, // 반복 재생 유무 ture일땐 밑에 재공해야함.
+            videoId: 'An6LvWQuj_8', // 반복 재생할 유튜브 영상 id 목록
+        },
+        events: {
+            /*  onReady 준비가 되면 함수 실행 
+            event 매개변수의 이름으로 받아서 함수 내부에서 사용가능
+            */
+            onReady: function (event) {
+                /* 타켓 : 재생되는 영상 */
+                event.target.mute() // 음소거
+            }
+        }
+        /* events: {
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
+        } */
+    });
+}
+
+```
+* html 부분
+```
+    <!-- YUPTUBE VIDEO -->
+    <section class="youtube">
+    <div class="youtube__area">
+        <!-- player 실제 유튜브가 실행되는 장소 -->
+        <div id="player"></div>
+    </div>
+    <div class="youtube__cover">
+        
+    </div>
+    </section>
+```
+
+* css 부분
+```
+.youtube {
+    position: relative;
+    height: 700px;
+    background-color: #333;
+    overflow: hidden;
+}
+
+.youtube .youtube__area {
+    width: 1920px;
+    background-color: tomato;
+    position: absolute;
+    left: 50%;
+    /* 정중앙으로 보내기 */
+    margin-left: calc(1920px / -2);
+    top: 50%;
+    margin-top: calc(1920px * 9 / 16 / -2);
+
+}
+/* 가상요소선택자 ::before */
+.youtube .youtube__area::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 0;
+    /* 16:9 박스 만들기 밑에  padding-top: 56.25%;*/
+    padding-top: 56.25%;
+}
+.youtube .youtube__cover {
+    background-image: url("../images/video_cover_pattern.png");
+    background-color: rgba(0,0,0,0.3);
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+```
+
+
+# 유튜브 위 floating 애니메이션 
+
+* https://gsap.com/docs/v3/Eases/
+
+
+```
+/* youtube 애니메이션과 연관된.  */
+// 범위 랜덤 함수(소수점 2자리까지)
+function random(min, max) {
+    // `.toFixed()`를 통해 반환된 문자 데이터를,
+    // `parseFloat()`을 통해 소수점을 가지는 숫자 데이터로 변환
+    return parseFloat((Math.random() * (max - min) + min).toFixed(2))
+}
+
+/* youtube.js 위에 애니메이션 */
+/* size : 위 아래로 움직이는 범위 */
+function floatingObject(selector, delay, size) {
+    // gsap.to(요소, 지속시간, 옵션);
+    /* 위에 random 함수 할당. */
+    gsap.to(selector, // 선택자
+        random(1.5, 2.5), // 애니메이션 동작 시간
+        { // 옵션
+        y: size, /* size 매개변수 할당 */
+        /* repeat: -1, 무한반복 */
+        repeat: -1,
+        /* yoyo 한번 재생된 애니메이션을 뒤로 재생하게해줌. */
+        yoyo: true,
+        /* gsap easing */
+        ease: "power1.inOut",
+        delay: random(0, delay)
+        }
+    );
+}
+floatingObject(".floating1", 1, 15);
+floatingObject(".floating2", 0.5, 15);
+floatingObject(".floating3", 1.5, 20);
+```

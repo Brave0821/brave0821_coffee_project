@@ -136,3 +136,34 @@ promotionToggleBtn.addEventListener("click", function(){
         promotionEl.classList.remove("hide");
     }
 });
+
+/* youtube 애니메이션과 연관된.  */
+// 범위 랜덤 함수(소수점 2자리까지)
+function random(min, max) {
+    // `.toFixed()`를 통해 반환된 문자 데이터를,
+    // `parseFloat()`을 통해 소수점을 가지는 숫자 데이터로 변환
+    return parseFloat((Math.random() * (max - min) + min).toFixed(2))
+}
+
+/* youtube.js 위에 애니메이션 */
+/* size : 위 아래로 움직이는 범위 */
+function floatingObject(selector, delay, size) {
+    // gsap.to(요소, 지속시간, 옵션);
+    /* 위에 random 함수 할당. */
+    gsap.to(selector, // 선택자
+        random(1.5, 2.5), // 애니메이션 동작 시간
+        { // 옵션
+        y: size, /* size 매개변수 할당 */
+        /* repeat: -1, 무한반복 */
+        repeat: -1,
+        /* yoyo 한번 재생된 애니메이션을 뒤로 재생하게해줌. */
+        yoyo: true,
+        /* gsap easing */
+        ease: "power1.inOut",
+        delay: random(0, delay)
+        }
+    );
+}
+floatingObject(".floating1", 1, 15);
+floatingObject(".floating2", 0.5, 15);
+floatingObject(".floating3", 1.5, 20);

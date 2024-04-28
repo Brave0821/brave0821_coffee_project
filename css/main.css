@@ -536,7 +536,7 @@ header .badges .badge {
     border: 2px solid #333;
     border-radius: 50%;
     position: absolute;
-    top: 300px; z-index: 1;
+    top: 210px; z-index: 1;
     cursor: pointer;
     outline: none;
     display: flex;
@@ -630,7 +630,7 @@ header .badges .badge {
     margin-left: calc(1920px / -2);
     top: 50%;
     margin-top: calc(1920px * 9 / 16 / -2);
-
+    /*# player */
 }
 /* 가상요소선택자 ::before */
 .youtube .youtube__area::before {
@@ -648,4 +648,31 @@ header .badges .badge {
     top: 0; left: 0;
     width: 100%;
     height: 100%;
+}
+
+#player {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0; left: 0;
+}
+
+.youtube .inner {
+    height: 700px;
+}
+
+.youtube .floating1 {
+    position: absolute;
+    top: 50px; left: 0;
+    
+}
+.youtube .floating2 {
+    position: absolute;
+    top: 350px; left: 150px;
+
+}
+.youtube .floating3 {
+    position: absolute;
+    bottom: -200px; right: 0;
+
 }
