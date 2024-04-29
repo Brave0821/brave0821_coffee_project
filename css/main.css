@@ -9,7 +9,8 @@ body {
     /*line-height: 글 사이 행간 */
     line-height: 1.4;
     font-family: "Nanum Gothic", sans-serif;
-    height: 3000px;
+/*     height: 3000px; */
+    
 }
 img {
     /* 이미지를 글자 취급x 상자 레이아웃으로 취급 아래 공백 사라짐. */
