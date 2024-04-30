@@ -10,7 +10,7 @@ body {
     line-height: 1.4;
     font-family: "Nanum Gothic", sans-serif;
 /*     height: 3000px; */
-    
+
 }
 img {
     /* 이미지를 글자 취급x 상자 레이아웃으로 취급 아래 공백 사라짐. */
@@ -672,8 +672,84 @@ header .badges .badge {
     top: 350px; left: 150px;
 
 }
-.youtube .floating3 {
-    position: absolute;
-    bottom: -200px; right: 0;
 
+
+/* SEASON PRODUCT */
+.season-product {
+    background-image: url("../images/season_product_bg.jpg");
+}
+
+.season-product .inner {
+    height: 400px;
+}
+
+
+/* 위에 오버플로우 히든으로 짤려서 여기다 */
+.season-product .floating3 {
+    position: absolute;
+    top: -200px; right: 0;
+}
+.season-product .text-group {
+    position: absolute;
+    top: 110px; right: 100px;
+}
+.season-product .text-group .title {
+    margin-bottom: 10px;
+}
+.season-product .text-group .description {
+    margin-bottom: 15px;
+}
+.season-product .text-group .more {
+
+}
+
+/*<!-- RESERVE COFFEE --> */
+
+.reserve-coffee {
+    background-image: url("../images/reserve_bg.jpg");
+}
+.reserve-coffee .inner {
+    height: 400px;
+}
+.reserve-coffee .reserve-logo {
+    position: absolute;
+    top: 110px; left: 0;
+}
+.reserve-coffee .text-group {
+    position: absolute;
+    top: 124px;
+    left: 208px;
+}
+.reserve-coffee .product {
+    position: absolute;
+    top: 0; right: 0;
+}
+
+/*     <!-- PICK YOUR FAVORITE -->  */
+
+.pick-your-favorite {
+    background-image: url("../images/favorite_bg.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    /* 요소가 스크롤될때 같이 스크롤안되고 고정됨 즉 화면은 붙어있고 위에 요소는 스크롤에 움직임. 딱 보면 알거임*/
+    background-attachment: fixed;
+    /* 배경 이미지를 요소에 더 넓은 너비에 출력 */
+    background-size: cover;
+}
+.pick-your-favorite .inner {
+    padding: 110px 0;
+}
+.pick-your-favorite .text-group {
+    margin-left: 100px;
+    display: flex;
+    width: 362px;
+    /* flex-wrap: wrap;: 줄바꿈이 가능한 형태로 만들어줌 */
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+.pick-your-favorite .text-group .title {
+    margin-bottom: 40px;
+}
+.pick-your-favorite .text-group .description {
+    margin-bottom: 40px;
 }

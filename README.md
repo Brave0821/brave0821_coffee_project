@@ -147,6 +147,49 @@ fadeEls.forEach(function (fadeEl, index) {
     width: calc(819px * 3 + 20px);
 }
 ```
+### 스크롤 시 화면 고정 위에 요소만 움직이게
+
+* background-attachment: fixed;
+```
+.pick-your-favorite {
+    background-image: url("../images/favorite_bg.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    /* 요소가 스크롤될때 같이 스크롤안되고 고정됨 즉 화면은 붙어있고 위에 요소는 스크롤에 움직임. 딱 보면 알거임*/
+    background-attachment: fixed;
+    /* 배경 이미지를 요소에 더 넓은 너비에 출력 */
+    background-size: cover;
+}
+
+```
+### 줄바꿈이 가능하게 
+
+*   /* flex-wrap: wrap;: 글이 넘치면 줄바꿈이 가능한 형태로 만들어줌 */
+
+```
+.pick-your-favorite .text-group {
+    background-color: tomato;
+    display: flex;
+    width: 362px;
+    /* flex-wrap: wrap;: 줄바꿈이 가능한 형태로 만들어줌 */
+    flex-wrap: wrap;
+}
+```
+
+### css로 버튼 호버 시 변환시키게 
+
+```
+/* btn WHITE */
+.btn.btn--white {
+    color: #fff;
+    border-color: #fff;
+}
+.btn.btn--white:hover {
+    color: #333;
+    background-color: #fff;
+}
+
+```
 
 ---------------------------------------------------------------------------------------------------
 # swiperjs v11.1.1 버젼
