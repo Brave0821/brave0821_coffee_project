@@ -398,3 +398,5 @@ floatingObject(".floating1", 1, 15);
 floatingObject(".floating2", 0.5, 15);
 floatingObject(".floating3", 1.5, 20);
 ```
+
+* 저장을 위한 기록 추가
