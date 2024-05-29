@@ -398,5 +398,32 @@ floatingObject(".floating1", 1, 15);
 floatingObject(".floating2", 0.5, 15);
 floatingObject(".floating3", 1.5, 20);
 ```
+----------------------------------------------------
 
-* 저장을 위한 기록 추가
+# <!-- ScrollMagic cdn추가 -->
+
+ScrollMagic를 사용하면 
+
+
+```
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js" integrity="sha512-8E3KZoPoZCD+1dgfqhPbejQBnQfBXe8FuwL4z/c8sTrgeDMFEnoyTlH3obB4/fV+6Sg0a0XF+L/6xS4Xx1fUEg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+```
+
+```
+const spyEls = document.querySelectorAll("section.scroll-spy");
+/*scroll-spy 추가 spyEls s 반복이니 forEach 사용가능 */
+spyEls.forEach(function (spyEl){
+    /* 지정한다 클래스 속성을 토글(넣었다 뺏다.)  */
+    new scrollMagic
+    .Scene({
+        triggerElement: spyEl, // 보여짐 여부를 감시할 요소를 지정
+        triggerHook: .8 //0.8 부분에 걸리면 실행됨
+    })
+    .setClassToggle(spyEl, "show")
+    .addTo(new scrollMagic.Controller());
+})
+
+ ```
+scroll-spy를 가진 클래스들을 지속적으로 감시 
+요소가 지정된 곳을 넘어 보이는 순간 show 클래스를 보여준다.
+
