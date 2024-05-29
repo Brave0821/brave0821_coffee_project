@@ -739,6 +739,7 @@ header .badges .badge {
 .pick-your-favorite .inner {
     padding: 110px 0;
 }
+
 .pick-your-favorite .text-group {
     margin-left: 100px;
     display: flex;
@@ -769,4 +770,46 @@ header .badges .badge {
 }
 .reserve-store .inner {
     height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.reserve-store .medal {
+    width: 334px;
+    height: 334px;
+    perspective: 600px;
+}
+
+/* 다중 선택자. */
+.reserve-store .medal .front, 
+.reserve-store .medal .back {
+    width: 334px;
+    height: 334px;
+    position: absolute;
+    /* 뒤집어졌을 떄 뒷면은 화면에서 안보인다. -backface-visibility */
+    backface-visibility: hidden; /* 뒷 면을 숨긴다. */
+    transition: 1s;
+}
+
+.reserve-store .medal .front {
+    /* 2개의 이미지가 겹쳐진다. */
+    transform: rotateY(0deg);
+}
+.reserve-store .medal:hover .front {
+    transform: rotateY(180deg);
+}
+.reserve-store .medal .back {
+  
+    transform: rotateY(-180deg);
+}
+.reserve-store .medal:hover .back {
+    transform: rotateY(0deg);
+}
+.reserve-store .medal .back .btn {
+    position: absolute;
+    top: 240px;
+    left: 0;
+    right: 0;
+    margin: auto;
 }
