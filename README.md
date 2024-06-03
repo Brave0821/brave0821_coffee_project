@@ -408,6 +408,29 @@ ScrollMagic를 사용하면
 ```
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js" integrity="sha512-8E3KZoPoZCD+1dgfqhPbejQBnQfBXe8FuwL4z/c8sTrgeDMFEnoyTlH3obB4/fV+6Sg0a0XF+L/6xS4Xx1fUEg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 ```
+* 예시1 
+delay-1를 붙여서 전환효과 효과를 0.x초 지연시킬 수 있다.
+
+```
+    <!-- SEASON PRODUCT 0529 scroll-spy 추가-->
+    <section class="season-product scroll-spy">
+        <div class="inner">
+            <img src="./images/floating3.png" alt="icon" class="floating floating3" />
+            <img src="./images/season_product_image.png" alt="" class="product back-to-position to-right delay-0" />
+            <div class="text-group">
+                <img src="./images/season_product_text1.png" alt="" class="title back-to-position to-left delay-1" />
+                <img src="./images/season_product_text2.png" alt="" class="description back-to-position to-left delay-2" />
+                <div class="more back-to-position to-left delay-3">
+                    <a href="javascript:void(0)" class="btn">자세히 보기</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+```
+
+
 
 ```
 const spyEls = document.querySelectorAll("section.scroll-spy");
@@ -427,3 +450,41 @@ spyEls.forEach(function (spyEl){
 scroll-spy를 가진 클래스들을 지속적으로 감시 
 요소가 지정된 곳을 넘어 보이는 순간 show 클래스를 보여준다.
 
+```
+/* 스크롤 이벤트  */
+.back-to-position {
+    opacity: 0;
+    transition: 1s;
+}
+
+.back-to-position.to-right {
+    transform: translateX(-150px);
+}
+
+.back-to-position.to-left {
+    transform: translateX(150px);
+}
+
+.show .back-to-position {
+    opacity: 1;
+    /* transform: translateX(0); 원래 위치로 돌아옴 */
+    transform: translateX(0);
+}
+
+.show .back-to-position.delay-0 {
+    /* 전환효과 효과를 0.x초 지연시킨다는 의미 */
+    transition-delay: 0s;
+}
+
+.show .back-to-position.delay-1 {
+    transition-delay: .3s;
+}
+
+.show .back-to-position.delay-2 {
+    transition-delay: .6s;
+}
+
+.show .back-to-position.delay-3 {
+    transition-delay: .9s;
+}
+```

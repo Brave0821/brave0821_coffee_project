@@ -6,17 +6,17 @@ const searchEl = document.querySelector(".search");
 const searchInputEl = searchEl.querySelector("input")
 
 
-searchEl.addEventListener("click", function (){
+searchEl.addEventListener("click", function () {
     searchInputEl.focus();
 });
 
-searchInputEl.addEventListener("focus", function (){
+searchInputEl.addEventListener("focus", function () {
     searchEl.classList.add("focused")
     searchInputEl.setAttribute("placeholder", "통합검색");
 });
 
 /* blur -> focus가 해제된 상태 -> 클릭 후 원상태로 돌아오면 위에 내용이 사라짐.*/
-searchInputEl.addEventListener("blur", function (){
+searchInputEl.addEventListener("blur", function () {
     searchEl.classList.remove("focused")
     searchInputEl.setAttribute("placeholder", "");
 });
@@ -34,7 +34,7 @@ const badgeEl = document.querySelector("header .badges");
 
 /* lodash cdn으로 줄인결과. */
 
-window.addEventListener("scroll", _.throttle(function (){
+window.addEventListener("scroll", _.throttle(function () {
     console.log(window.scrollY);
     /* y가 500보다 커지면 */
     if (window.scrollY > 500) {
@@ -53,7 +53,7 @@ window.addEventListener("scroll", _.throttle(function (){
             opacity: 1,
             display: "block"
         });
-                /* 0.6초에 걸쳐서 서서히 보여진다..  */
+        /* 0.6초에 걸쳐서 서서히 보여진다..  */
     }
 }, 300));
 
@@ -69,14 +69,14 @@ const fadeEls = document.querySelectorAll(".visual .fade-in");
 fadeEls.forEach(function (fadeEl, index) {
     /* 2개의 매개변수를 가지고 있는 함수들이 반복적으로 실행 될 때 */
     gsap.to(fadeEl, 1, {
-        delay:(index + 1) * 0.7,
+        delay: (index + 1) * 0.7,
         /*    delay:(index + 1) * 0.7, - > 
         0에 숫자 1 더해서 0.7 곱하면 fade-in 이라는 클래스를 가진 요소는 0.7초 후에 애니메이션 동작
         두 번쨰는 1.4초 세 번쨰 2.1  네 번쨰 2.7 뒤에 요소에 opacity 1로 나타내게 만듬.
         */
         opacity: 1
-    } );
-       // gsap.to(여기에선 반복요소, 지속시간 초 단위, 옵션);
+    });
+    // gsap.to(여기에선 반복요소, 지속시간 초 단위, 옵션);
     /* gsap.to - > 애니메이션 라이브러리 */
 });
 
@@ -123,15 +123,15 @@ const promotionToggleBtn = document.querySelector(".toggle-promotion");
 let isHidePromotion = false;
 
 /* 프로모션 부분을 보여주고 숨겨주는 기능 */
-promotionToggleBtn.addEventListener("click", function(){
+promotionToggleBtn.addEventListener("click", function () {
     /* ! - > 느낌표가 붙어있는 뒷쪽에 있는 값이 반대가 되게
     반대 값 전환 코드!
     let isHidePromotion = false; 니까 true가 되게 클릭 시   */
     isHidePromotion = !isHidePromotion
-    if(isHidePromotion) {
+    if (isHidePromotion) {
         // 숨김처리
         promotionEl.classList.add("hide");
-    } else { 
+    } else {
         // 보임 처리
         promotionEl.classList.remove("hide");
     }
@@ -153,14 +153,15 @@ function floatingObject(selector, delay, size) {
     gsap.to(selector, // 선택자
         random(1.5, 2.5), // 애니메이션 동작 시간
         { // 옵션
-        y: size, /* size 매개변수 할당 */
-        /* repeat: -1, 무한반복 */
-        repeat: -1,
-        /* yoyo 한번 재생된 애니메이션을 뒤로 재생하게해줌. */
-        yoyo: true,
-        /* gsap easing */
-        ease: "power1.inOut",
-        delay: random(0, delay)
+            y: size,
+            /* size 매개변수 할당 */
+            /* repeat: -1, 무한반복 */
+            repeat: -1,
+            /* yoyo 한번 재생된 애니메이션을 뒤로 재생하게해줌. */
+            yoyo: true,
+            /* gsap easing */
+            ease: "power1.inOut",
+            delay: random(0, delay)
         }
     );
 }
@@ -172,13 +173,13 @@ floatingObject(".floating3", 1.5, 20);
 
 const spyEls = document.querySelectorAll("section.scroll-spy");
 /*scroll-spy 추가 spyEls s 반복이니 forEach 사용가능 */
-spyEls.forEach(function (spyEl){
+spyEls.forEach(function (spyEl) {
     /* 지정한다 클래스 속성을 토글(넣었다 뺏다.)  */
-    new scrollMagic
-    .Scene({
-        triggerElement: spyEl, // 보여짐 여부를 감시할 요소를 지정
-        triggerHook: 0.8, //0.8 부분에 걸리면 실행됨
-    })
-    .setClassToggle(spyEl, "show")
-    .addTo(new scrollMagic.Controller());
+    new ScrollMagic
+        .Scene({
+            triggerElement: spyEl, // 보여짐 여부를 감시할 요소를 지정
+            triggerHook: .8 //0.8 부분에 걸리면 실행됨
+        })
+        .setClassToggle(spyEl, "show")
+        .addTo(new ScrollMagic.Controller());
 });
