@@ -33,9 +33,22 @@
 
 --------------------------------------------------------------------------------------------
 
+## 사용한 라이브러리 정리
+
+```
+ScrollMagic: 주로 스크롤 이벤트를 기반으로 애니메이션과 이벤트 트리거를 관리하는 라이브러리.
+Lodash: 데이터 조작 및 유틸리티 함수를 제공하는 범용 JavaScript 라이브러리.
+GSAP: 고성능, 정밀한 제어가 가능한 애니메이션을 구현하는 데 특화된 라이브러리.
+
+```
+
+
+
+
 ## JS lodash.js CDN
 
 * https://cdnjs.com/libraries/lodash.js
+Lodash : 사용시 lodash 라이브러리 사용할 때 js보다 위에 선언
 
 ```
 window.addEventListener("scroll", _.throttle(function (){
