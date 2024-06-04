@@ -114,6 +114,23 @@ new Swiper(".promotion .swiper", {
     }
 });
 
+/* footer 위에 다중슬라이더 요소 */
+new Swiper(".awards .swiper", {
+    /* horizontal : 수평을 의미하는 문자데이터 */
+    // direction: "horizontal"
+    autoplay: true,
+    loop: true,
+    spaceBetween: 30,  // 슬라이드 사이 여백
+    slidesPerView: 5,// 하나의 화면에 몇개의 슬라이드?'
+    navigation: {
+      prevEl: ".awards .swiper-prev",
+      nextEl: ".awards .swiper-next"
+    }
+});
+
+
+/* swiper 끝 */
+
 /* active -> 활성화 */
 
 /* 자세히 보기 클릭 시 하단 스와이프 숨김 기능 */
@@ -183,3 +200,4 @@ spyEls.forEach(function (spyEl) {
         .setClassToggle(spyEl, "show")
         .addTo(new ScrollMagic.Controller());
 });
+
