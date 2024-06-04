@@ -996,7 +996,7 @@ header .badges .badge {
     width: 100%;
     height: 40px;
 }
-/* 다중선택자 */
+/* 다중선택자 (공통되는 부분)*/
 .awards .swiper-prev,
 .awards .swiper-next {
     width: 42px;
@@ -1014,4 +1014,16 @@ header .badges .badge {
     top: 0;
     bottom: 0;
     margin: auto;
+}
+.awards .swiper-prev {
+    left: -100px;
+}
+.awards .swiper-next {
+    right: -100px;
+}
+
+.awards .swiper-prev:hover,
+.awards .swiper-next:hover {
+    background-color: #fff;
+    color: #333;
 }
