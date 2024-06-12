@@ -24,6 +24,7 @@ searchInputEl.addEventListener("blur", function () {
 /* badges */
 
 const badgeEl = document.querySelector("header .badges");
+const toTopEl = document.querySelector("#to-top");
 
 /* documment = html */
 /* lodash cdn */
@@ -44,8 +45,13 @@ window.addEventListener("scroll", _.throttle(function () {
             /* name: '', */
             opacity: 0,
             display: "none"
+            // 버튼 보이기!
         });
         /* 0.6초에 걸쳐서 서서히 사라진다.  */
+        gsap.to("#to-top", 0.2, {
+            x: 0
+        });
+
     } else {
         // 배지 보이기
         gsap.to(badgeEl, .6, {
@@ -54,6 +60,10 @@ window.addEventListener("scroll", _.throttle(function () {
             display: "block"
         });
         /* 0.6초에 걸쳐서 서서히 보여진다..  */
+        // 버튼 숨기기
+        gsap.to("#to-top", 0.2, {
+            x: 100
+        });
     }
 }, 300));
 
@@ -61,6 +71,11 @@ window.addEventListener("scroll", _.throttle(function () {
 .throttle - > 일정시간 한 번씩 실행되도록 제한을 걸다.
 */
 
+toTopEl.addEventListener("click", function(){
+    gsap.to(window, 0.7, {
+        scrollTo: 0
+    });
+});
 
 /* FADE-IN: 순차적으로 나타나는 기능. */
 
@@ -200,4 +215,10 @@ spyEls.forEach(function (spyEl) {
         .setClassToggle(spyEl, "show")
         .addTo(new ScrollMagic.Controller());
 });
+
+/* footer 자동으로 날짜변경 */
+
+const thisYear = document.querySelector(".this-year");
+thisYear.textContent = new Date().getFullYear(); //2024
+
 

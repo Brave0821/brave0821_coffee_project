@@ -1027,3 +1027,100 @@ header .badges .badge {
     background-color: #fff;
     color: #333;
 }
+
+footer {
+    background-color: #272727;
+    border-top: 1px solid #333;
+}
+footer .inner {
+    padding: 40px 0px 60px 0px;
+}
+footer .inner .menu {
+    display: flex;
+    justify-content: center;
+} 
+footer .inner .menu li {
+    position: relative;
+} 
+footer .inner .menu li::before {
+    content: "";
+    width: 3px;
+    height: 3px;
+    background-color: #555;
+    position: absolute;
+    top: 0; bottom: 0;
+    right: -1px;
+    margin: auto;
+} 
+/* last-child -> li중 가장 마지막 요소 */
+footer .inner .menu li:last-child::before {
+    display: none;
+}
+footer .inner .menu li a {
+    color: #ccc;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 15px;
+    display: block;
+} 
+footer .inner .menu li a.green {
+    color: #669900;
+}
+
+footer .inner .btn-group {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+footer .inner .btn-group .btn {
+     font-size: 12px;
+     margin-right: 10px;
+}
+footer .inner .btn-group .btn:last-child {
+    margin-right: 0;
+} 
+
+footer .inner .info {
+    margin-top: 30px;
+    text-align: center;
+} 
+footer .inner .info span {
+    margin-right: 20px;
+    color: #999;
+    font-size: 12px;
+} 
+footer .inner .info span:last-child {
+    margin-right: 0;
+}
+footer .inner .copyright {
+    color: #999;
+    font-size: 12px;
+    text-align: center;
+    margin-top: 12px;
+} 
+footer .inner .copyright .this-year {} 
+footer .inner .logo {
+    /* img요소가 display:block + magin:0 auto;인 경우 width 없이도 가운데 정렬 가능
+    img요소에 display: block 지정함
+    */
+    margin: 30px auto 0;
+} 
+
+#to-top {
+    width: 42px;
+    height: 42px;
+    background-color: #333;
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    /* 다른 섹션들보다 위에 있게  z-index*/
+    z-index: 9;
+    
+}

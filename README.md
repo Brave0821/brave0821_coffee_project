@@ -109,6 +109,16 @@ window.addEventListener("scroll", _.throttle(function (){
     }
 }, 300));
 ```
+
+* gsap 위로 올려주는 cdn
+ 스크롤 기능.
+ 
+```
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js" integrity="sha512-1PKqXBz2ju2JcAerHKL0ldg0PT/1vr3LghYAtc59+9xy8e19QEtaNUyt1gprouyWnpOPqNJjL4gXMRMEpHYyLQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+```
+
+
+
 ----------------------------------------------------------------------------------------------
 visual 부분 필기 
 - section = 계층이다. 
